@@ -8,6 +8,8 @@ use feature qw/say/;
 use Data::Dumper qw(Dumper);
 use Carp qw(confess cluck carp croak);
 
+use backend::VNC;
+
 sub connect_vnc($$) {
     my ($self, $args) = @_;
     if ($self->{vnc}) {

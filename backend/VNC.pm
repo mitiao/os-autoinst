@@ -310,7 +310,7 @@ sub _handshake_security {
     {
         $socket->read(my $security_result, 4)
           || die 'unexpected end of data';
-        $security_result = unpack('I', $security_result);
+        $security_result = unpack('N', $security_result);
 
         #    bmwqemu::diag $security_result;
         die 'login failed' if $security_result;
